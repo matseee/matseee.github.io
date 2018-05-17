@@ -1,0 +1,25 @@
+{
+  "name": "ma.tthias.space",
+  "version": "1.0.0",
+  "description": "My website",
+  "scripts": {
+    "build": "node node_modules/html-minifier/cli.js --input-dir ./src --output-dir ./dist --file-ext html --remove-comments --use-short-doctype --collapse-whitespace && node node_modules/copy/bin/cli.js src/*.ico dist && node node_modules/copy/bin/cli.js src/images/*.png dist/images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fischer-matthias/ma.tthias.space.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Matthias Fischer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fischer-matthias/ma.tthias.space/issues"
+  },
+  "homepage": "https://github.com/fischer-matthias/ma.tthias.space#readme",
+  "dependencies": {
+    "copy": "^0.3.2",
+    "html-minifier": "^3.5.15"
+  }
+}
