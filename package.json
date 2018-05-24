@@ -1,6 +1,6 @@
 {
   "name": "ma.tthias.space",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My website",
   "scripts": {
     "build": "node node_modules/html-minifier/cli.js --input-dir ./src --output-dir ./dist --file-ext html --remove-comments --use-short-doctype --collapse-whitespace && node node_modules/copy/bin/cli.js src/*.ico dist && node node_modules/copy/bin/cli.js src/images/*.png dist/images"
