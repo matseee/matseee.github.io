@@ -1,6 +1,6 @@
 {
   "name": "ma.tthias.space",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "My website",
   "scripts": {
     "clean": "rimraf ./dist",
