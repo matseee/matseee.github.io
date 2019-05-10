@@ -1,31 +1,31 @@
 {
-  "name": "ma.tthias.space",
-  "version": "1.0.5",
-  "description": "My website",
-  "scripts": {
-    "clean": "rimraf ./dist",
-    "minify": "html-minifier --input-dir ./src --output-dir ./dist --file-ext html --remove-comments --use-short-doctype --collapse-whitespace",
-    "copy-icon": "cpy ./src/*.ico ./dist",
-    "copy-images": "cpy ./src/images/*.png ./dist/images",
-    "copy-pub-key": "cpy ./src/*.pgp ./dist",
-    "build": "npm run clean && npm run minify && npm run copy-icon && npm run copy-images && npm run copy-pub-key"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fischer-matthias/ma.tthias.space.git"
-  },
-  "keywords": [
-    "website"
-  ],
-  "author": "Matthias Fischer",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fischer-matthias/ma.tthias.space/issues"
-  },
-  "homepage": "https://github.com/fischer-matthias/ma.tthias.space#readme",
-  "devDependencies": {
-    "cpy-cli": "^2.0.0",
-    "html-minifier": "^3.5.15",
-    "rimraf": "^2.6.2"
-  }
+    "name": "ma.tthias.space",
+    "version": "1.0.6",
+    "description": "My website",
+    "scripts": {
+        "clean": "rimraf ./dist",
+        "minify": "html-minifier --input-dir ./src --output-dir ./dist --file-ext html --remove-comments --use-short-doctype --collapse-whitespace",
+        "copy-icon": "cpy ./src/*.ico ./dist",
+        "copy-images": "cpy ./src/images/*.png ./dist/images",
+        "copy-pub-key": "cpy ./src/*.pgp ./dist",
+        "build": "npm run clean && npm run minify && npm run copy-icon && npm run copy-images && npm run copy-pub-key"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fischer-matthias/ma.tthias.space.git"
+    },
+    "keywords": [
+        "website"
+    ],
+    "author": "Matthias Fischer",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fischer-matthias/ma.tthias.space/issues"
+    },
+    "homepage": "https://github.com/fischer-matthias/ma.tthias.space#readme",
+    "devDependencies": {
+        "cpy-cli": "^2.0.0",
+        "html-minifier": "^3.5.15",
+        "rimraf": "^2.6.2"
+    }
 }
