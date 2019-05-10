@@ -7,7 +7,7 @@
         "minify": "html-minifier --input-dir ./src --output-dir ./dist --file-ext html --remove-comments --use-short-doctype --collapse-whitespace",
         "copy-icon": "cpy ./src/*.ico ./dist",
         "copy-images": "cpy ./src/images/*.png ./dist/images",
-        "copy-pub-key": "cpy ./src/*.pgp ./dist",
+        "copy-pub-key": "cpy ./src/*.asc ./dist",
         "build": "npm run clean && npm run minify && npm run copy-icon && npm run copy-images && npm run copy-pub-key"
     },
     "repository": {
