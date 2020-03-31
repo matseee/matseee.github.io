@@ -1,7 +1,9 @@
 <template>
-    <section id="current-projects">
-        <div class="container">
-        </div>
+    <section id="projects" class="container">
+        <h3 class="title">Current projects</h3>
+        <p class="description">
+            more later.
+        </p>
     </section>
 </template>
 
@@ -11,6 +13,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+    .container {
+        text-align: center;
+    }
 
 </style>
