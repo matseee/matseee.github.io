@@ -1,8 +1,8 @@
 <template>
     <header id="home" class="header">
         <section class="container">
-            <h1>Hello I'm Matthias</h1>
-            <p>a software development enthusiast since the age of 13 years.</p>
+            <h1 class="title">Hello I'm Matthias</h1>
+            <p class="description">a software development enthusiast since the age of 13 years.</p>
         </section>
     </header>
 </template>
