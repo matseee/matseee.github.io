@@ -1,31 +1,42 @@
 {
-    "name": "ma.tthias.space",
-    "version": "1.0.6",
-    "description": "My website",
-    "scripts": {
-        "clean": "rimraf ./dist",
-        "minify": "html-minifier --input-dir ./src --output-dir ./dist --file-ext html --remove-comments --use-short-doctype --collapse-whitespace",
-        "copy-icon": "cpy ./src/*.ico ./dist",
-        "copy-images": "cpy ./src/images/*.png ./dist/images",
-        "copy-pub-key": "cpy ./src/*.pgp ./dist",
-        "build": "npm run clean && npm run minify && npm run copy-icon && npm run copy-images && npm run copy-pub-key"
+  "name": "ma.tthias.space",
+  "version": "2.0.0",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "milligram": "^1.3.0",
+    "normalize": "^0.3.1",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-eslint": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/fischer-matthias/ma.tthias.space.git"
-    },
-    "keywords": [
-        "website"
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
     ],
-    "author": "Matthias Fischer",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/fischer-matthias/ma.tthias.space/issues"
+    "parserOptions": {
+      "parser": "babel-eslint"
     },
-    "homepage": "https://github.com/fischer-matthias/ma.tthias.space#readme",
-    "devDependencies": {
-        "cpy-cli": "^2.0.0",
-        "html-minifier": "^3.5.15",
-        "rimraf": "^2.6.2"
-    }
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

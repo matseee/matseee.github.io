@@ -1,26 +1,11 @@
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Legal Disclosure & Privacy policy</title>
-
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="Description" content="Homepage of Matthias Fischer">
-
-		<meta name="referrer" content="no-referrer">
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self' ; img-src 'self'">
-		<meta http-equiv="X-Content-Security-Policy" content="default-src 'self' ; img-src 'self'">
-		<meta http-equiv="X-WebKit-CSP" content="default-src 'self' ; img-src 'self'">
-	</head>
-	<body>
-		<h1>Impressum</h1>
-		<p><strong>Angaben gem&auml;&szlig; &sect; 5 TMG:</strong></p>
-		<p><br>Matthias Fischer</p>
+<template>
+    <section id="legaldiscloser" class="container">
+        <h1>Impressum</h1>
+		<p><strong>Angaben gem&auml;&szlig; &sect; 5 TMG:</strong><br/>Matthias Fischer</p>
+		<p></p>
 		<p><strong>Postanschrift:</strong><br>Gartenstr. 29<br>49635 Badbergen<br></p>
-		<p><strong>Kontakt:</strong></p>
-		<p>Telefon: +49 17630145624<br>E-Mail: m@tthias.space</p>
-		<p><strong>Vertreten durch:</strong></p>
-		<p>Matthias Fischer</p>
+		<p><strong>Kontakt:</strong><br/>Telefon: +49 17630145624<br>E-Mail: m@tthias.space</p>
+		<p><strong>Vertreten durch:</strong><br/>Matthias Fischer</p>
 		<p><br><strong>Urheberrechtliche Hinweise</strong></p>
 		<p><a href="https://xing.com" target="_blank" rel="noopener">Xing-Bild</a>
 		<br><a href="https://github.com" target="_blank" rel="noopener">Github-Bild</a></p>
@@ -59,5 +44,15 @@
 		<p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die f&uuml;r den Datenschutz verantwortliche Person in unserer Organisation:</p>
 		<p>Matthias Fischer</p>
 		<p><em>Die Datenschutzerkl&auml;rung wurde mit dem </em><a href="https://www.activemind.de/datenschutz/datenschutzhinweis-generator/" target="_blank" rel="noopener"><em>Datenschutzerkl&auml;rungs-Generator der activeMind AG erstellt</em></a><em>.</em></p>
-	</body>
-</html>
+    </section>
+</template>
+
+<script>
+export default {
+    name: 'LegalDiscloser'
+}
+</script>
+
+<style scoped>
+
+</style>
