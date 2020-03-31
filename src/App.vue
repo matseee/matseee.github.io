@@ -7,7 +7,7 @@
         <currentProjects/>
         <Contact/>
         <LegalDiscloser/>
-
+        <Footer/>
       </main>
   </div>
 </template>
@@ -18,6 +18,7 @@ import Home from './components/Home.vue'
 import CurrentProjects from './components/CurrentProjects.vue'
 import Contact from './components/Contact.vue'
 import LegalDiscloser from './components/LegalDiscloser.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -26,7 +27,8 @@ export default {
     Home,
     CurrentProjects,
     Contact,
-    LegalDiscloser
+    LegalDiscloser,
+    Footer
   }
 }
 </script>
