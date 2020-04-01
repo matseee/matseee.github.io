@@ -1,4 +1,4 @@
-![Node.js CI](https://github.com/fischer-matthias/ma.tthias.space/workflows/Node.js%20CI/badge.svg)
+[![Build](https://github.com/fischer-matthias/ma.tthias.space/workflows/Build/badge.svg)](https://github.com/fischer-matthias/ma.tthias.space/actions?query=workflow%3ABuild)
 # It's just my homepage ...
 written in js with vuejs as a framework and styled with milligram.
 
