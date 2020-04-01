@@ -3,8 +3,8 @@
         <h1>Impressum</h1>
 		<p><strong>Angaben gem&auml;&szlig; &sect; 5 TMG:</strong><br/>Matthias Fischer</p>
 		<p></p>
-		<p><strong>Postanschrift:</strong><br>Gartenstr. 29<br>49635 Badbergen<br></p>
-		<p><strong>Kontakt:</strong><br/>Telefon: +49 17630145624<br>E-Mail: m@tthias.space</p>
+		<p><strong>Postanschrift:</strong><br>Ernst-Sievers-Str. 17<br>49074 Osnabr&uuml;ck<br></p>
+		<p><strong>Kontakt:</strong><br>E-Mail: m@tthias.space</p>
 		<p><strong>Vertreten durch:</strong><br/>Matthias Fischer</p>
 		<p><br><strong>Urheberrechtliche Hinweise</strong></p>
 		<p><a href="https://xing.com" target="_blank" rel="noopener">Xing-Bild</a>
