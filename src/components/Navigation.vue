@@ -6,7 +6,7 @@
         </a>
         <ul class="navigation-list float-right">
             <li class="navigation-item">
-            <a class="navigation-link" href="https://github.com/fischer-matthias" target="_blank" rel="noopener">Github</a>
+            <a class="navigation-link" href="https://github.com/matseee" target="_blank" rel="noopener">Github</a>
             </li>
         </ul>
         </section>
