@@ -1,7 +1,6 @@
 <template>
   <div id="app">
       <main class="wrapper">
-
         <Navigation/>
         <Home/>
         <CurrentProjects/>
