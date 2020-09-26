@@ -4,7 +4,8 @@
 
         <Navigation/>
         <Home/>
-        <currentProjects/>
+        <CurrentProjects/>
+        <Skills/>
         <Contact/>
         <LegalDiscloser/>
         <Footer/>
@@ -16,6 +17,7 @@
 import Navigation from './components/Navigation'
 import Home from './components/Home.vue'
 import CurrentProjects from './components/CurrentProjects.vue'
+import Skills from './components/Skills.vue'
 import Contact from './components/Contact.vue'
 import LegalDiscloser from './components/LegalDiscloser.vue'
 import Footer from './components/Footer.vue'
@@ -26,6 +28,7 @@ export default {
     Navigation,
     Home,
     CurrentProjects,
+    Skills,
     Contact,
     LegalDiscloser,
     Footer
