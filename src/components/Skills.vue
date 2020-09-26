@@ -39,7 +39,7 @@ export default {
                 {
                     key: 'tool',
                     values: [
-                        'git (++)', 'jenkins (+)'
+                        'git (++)', 'electron (++)', 'nodejs (++)', 'docker (+)', 'capacitor (+)', 'jenkins (+)'
                     ],
                 }
             ]
