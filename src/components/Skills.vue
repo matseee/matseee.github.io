@@ -26,19 +26,19 @@ export default {
                 {
                     key: 'language',
                     values: [
-                        'abap (++)', 'typescript (+++)', 'java (+)'
+                        'abap', 'typescript', 'java'
                     ],
                 },
                 {
                     key: 'framework',
                     values: [
-                        'angular (+++)', 'ionic (+++)', 'sap ui5 (++)', 'android (+)'
+                        'angular', 'ionic', 'sap ui5', 'android'
                     ],
                 },
                 {
                     key: 'tool',
                     values: [
-                        'git (++)', 'electron (++)', 'nodejs (++)', 'docker (+)', 'capacitor (+)', 'jenkins (+)'
+                        'git', 'electron', 'nodejs', 'docker', 'capacitor', 'jenkins'
                     ],
                 }
             ]
