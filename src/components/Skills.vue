@@ -6,10 +6,9 @@
                     <h3 class="title">{{ category.key }} skills</h3>
                     <div class="description">
                         <template v-for="(val, idx) in category.values">
-                            <div class="column" :key="idx">
-                                <a class="button button-clear">{{ val }}</a>
-                                <br v-if="idx % 2 == 0">
-                            </div>
+                                <span class="badge" :key="idx">{{ val }}</span>
+                            <!-- <div class="column" :key="idx">
+                            </div> -->
                         </template>
                     </div>
                 </div>
@@ -60,4 +59,23 @@ export default {
         margin-bottom: 2.0rem;
     }
 
+    .badge {
+        background-color: darkgreen;
+        border-radius: 10px;
+        color: #fff;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1;
+        min-width: 10px;
+        padding: 3px 7px;
+        margin: 2px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .text {
+        color: white;
+    }
 </style>
