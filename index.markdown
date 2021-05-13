@@ -1,6 +1,6 @@
 ---
 layout: home
-title: hellooo
+title: hi I'm Matthias :)
 ---
 ## contact me
 - social: [github](https://github.com/matseee)
