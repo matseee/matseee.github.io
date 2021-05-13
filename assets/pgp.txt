@@ -1,11 +1,3 @@
-<template>
-    <section id="contact" class="container">
-        <h3 class="title">Do you want to contact me?</h3>
-        <p class="description">
-            You can send me an email <a href="mailto:m@tthias.space">m@tthias.space</a>.
-        </p>
-        <pre class="code prettyprint prettyprinted">
-            <code class="code-content">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQENBF6Dpu8BCAC6K/dZUHp/30wKajdduDQtGzSuiwrZfB639zto2jeuEGWsTWLv
@@ -36,28 +28,3 @@ x8Q8eP70CHoJR7jr7k707gkGJ9+E0zBgeC/QpjgD1EQtUH14UBb5lcsX8oUdxlJ3
 W2LneM9XMfneSzoZNLJkObYMWk7XyxVMOV5YKdHaKjYaFCWezPhzY3c=
 =mNSe
 -----END PGP PUBLIC KEY BLOCK-----
-            </code>
-        </pre>
-  </section>
-</template>
-
-<script>
-export default {
-    name: 'Contact'
-}
-</script>
-
-<style scoped>
-
-    .container {
-        text-align: center;
-    }
-
-    .prettyprint.code {
-        border:0;
-        border-left:.3rem solid darkgreen;
-        color:#655d5d;
-        position:relative
-    }
-
-</style>
