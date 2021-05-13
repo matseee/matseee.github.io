@@ -27,7 +27,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://matse.work" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
-theme: no-style-please
+remote_theme: no-style-please
 
 theme_config:
   appearance: "dark" # can be "light", "dark" or "auto"
