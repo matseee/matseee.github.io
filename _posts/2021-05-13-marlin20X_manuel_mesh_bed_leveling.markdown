@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Marlin 20X Manuel Mesh-Bed-Leveling"
+title:  "Marlin 20X manueeles Mesh-Bed-Leveling"
 date:   2021-05-13 03:45:00 +0200
 categories: 3D-Printing
 ---
