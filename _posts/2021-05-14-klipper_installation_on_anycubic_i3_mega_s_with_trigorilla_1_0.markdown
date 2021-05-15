@@ -18,10 +18,10 @@ Kurze Anleitung wie man Klipper auf den Anycubic Mega S mit einem Trigorilla Boa
     - `Baudrate for serial port: 250000`
     - mit `Q` beenden
 5. Mit `make` die Firmware bauen (sollte sich anschliessend unter `~/klipper/out/klipper.elf.hex` befinden)
-6. Firmware mit [`scp`](https://de.wikipedia.org/wiki/Secure_Copy) auf den eigenen Rechner kopieren bspw. `scp pi@XXX.XXX.XXX.XXX:~/klipper/out/klipper.elf.hex ~/klipper.elf.hex`
-7. Auf der Octoprint-Oberflaeche muss nun das Plugin [`Firmware Updater`](https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/blob/master/README.md) installiert werden.
+6. Firmware mit [scp](https://de.wikipedia.org/wiki/Secure_Copy) auf den eigenen Rechner kopieren bspw. `scp pi@XXX.XXX.XXX.XXX:~/klipper/out/klipper.elf.hex ~/klipper.elf.hex`
+7. Auf der Octoprint-Oberflaeche muss nun das Plugin [Firmware Updater](https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/blob/master/README.md) installiert werden.
 8. Firmware auf das Trigorilla Board flashen: `Octoprint` -> `Settings` -> `Firmware Updater` -> richtigen Serial-Port auswaehlen (`/dev/ttyUSBX`) -> zuvor kopierte Datei (`klipper.elf.hex`) auswaehlen -> `Flash from file` druecken -> es sollte eine Erfolgsmeldung kommen
-9. Nun installiere das Plugin [`OctoKlipper`](https://plugins.octoprint.org/plugins/klipper/) in Octoprint. Nach der Installation muss Octoprint neugestartet werden. Probiert man sich nun mit dem Drucker per Octoprint zu verbinden, kommt eine Fehlermeldung das die `printer.cfg` nicht vorhanden ist.
+9. Nun installiere das Plugin [OctoKlipper](https://plugins.octoprint.org/plugins/klipper/) in Octoprint. Nach der Installation muss Octoprint neugestartet werden. Probiert man sich nun mit dem Drucker per Octoprint zu verbinden, kommt eine Fehlermeldung das die `printer.cfg` nicht vorhanden ist.
 10. Klipper speichert die Drucker-Konfiguration in einer einfachen Text-Datei; Es ist schon eine vorgefertigte Datei fuer den Anycubic i3 Mega im `config/`-Ordner vorhanden:
     - wieder per SSH auf den Raspberry
     - `cd ~/klipper`
