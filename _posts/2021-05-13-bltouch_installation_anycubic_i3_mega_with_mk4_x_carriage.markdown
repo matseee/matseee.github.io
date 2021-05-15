@@ -42,4 +42,4 @@ G29     ;auto mesh leveling
 M500    ;save to EEPROM
 ```
 
-PS: Damit das Mesh in deinen Drucken auch benutzt wird, muss im State-GCode entweder mit `M420 S1` ([M420](https://marlinfw.org/docs/gcode/M420.html)) das aktuelle Mesh aktiviert oder nachdem Homeing ein neues Mesh per `G29` ([G29](https://marlinfw.org/docs/gcode/G029-abl-bilinear.html)) erzeugt werden. 
+PS: Damit das Mesh in deinen Drucken auch benutzt wird, muss im Start-GCode entweder mit `M420 S1` ([M420](https://marlinfw.org/docs/gcode/M420.html)) das aktuelle Mesh aktiviert oder nachdem Homeing ein neues Mesh per `G29` ([G29](https://marlinfw.org/docs/gcode/G029-abl-bilinear.html)) erzeugt werden. 
