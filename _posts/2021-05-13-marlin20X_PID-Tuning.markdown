@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Marlin 20X PID Tuning"
-date:   2021-05-13 03:03:00 +0200
-categories: 3D-Printing
+title: "Marlin 20X: PID Tuning"
+date: 2021-05-13 03:03:00 +0200
+categories: ["3D-Printing", "marlin"]
 ---
 Kurze Anleitung wie ein PID-Tuning des Hotends durchgefuehrt wird.
 
