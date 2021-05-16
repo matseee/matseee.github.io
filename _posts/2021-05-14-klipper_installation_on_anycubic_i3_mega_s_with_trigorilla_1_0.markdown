@@ -26,11 +26,12 @@ Kurze Anleitung wie man Klipper auf den Anycubic Mega S mit einem Trigorilla Boa
     - wieder per SSH auf den Raspberry
     - `cd ~/klipper`
     - `cp config/printer-anycubic-i3-mega-2017.cfg printer.cfg`
-    - in der Config-Datei muss noch der richtige Serial der MCU eingestellt werden. `ls /dev` zeigt alle Geraete an, da nur ein USB-Geraet angeschlossen ist, kann einfach dieses Geraet gewaehlt werden. In meinem Fall `ttyUSB1`. Demnach wird in der `printer.cfg` mit VIM oder nano der Parameter `[mcu]`-`serial` auf `/dev/ttyUSB1` geaendert.
+    - in der Config-Datei muss noch der richtige Serial der MCU eingestellt werden. `ls /dev/serial/by-id` zeigt alle Geraete an. Dort sollte in `USB_to_UART`-Controller angezeigt werden. In meinem Fall `usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0@`. Demnach wird in der `printer.cfg` mit VIM oder nano der Parameter `[mcu]`-`serial` auf `/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0` (ohne das `@`) geaendert.
 11. Mit dem Drucker verbinden
 12. Im Klipper-Tab mit `Restart`->`Host` den Klipper-Host neustarten (Hierbei wird ebenfalls die Konfiguration neu geladen).
 13. Die Funktion `Get Status` sollte nun `Klipper state: Ready` ausgeben.
-14. XY-Achse homen
-15. Z-Achse homen **(direkt zum Drucker und ueberpruefen ob die Endstops funktionieren indem beide Endstops per Hand gedrueckt werden)**
+14. Startet den Drucker einmal neu, nach einem Host-Neustart sollte die Funktion `Get Status` wieder `Klipper state: Ready` ausgeben.
+15. XY-Achse homen
+16. Z-Achse homen **(direkt zum Drucker und ueberpruefen ob die Endstops funktionieren indem beide Endstops per Hand gedrueckt werden)**
 
 Fertig.
