@@ -33,7 +33,8 @@ Kurze Anleitung wie man Klipper auf den Anycubic Mega S mit einem Trigorilla Boa
 13. Die Funktion `Get Status` sollte nun `Klipper state: Ready` ausgeben.
 14. Startet den Drucker einmal neu, nach einem Host-Neustart sollte die Funktion `Get Status` wieder `Klipper state: Ready` ausgeben.
 15. XY-Achse homen
-16. Z-Achse homen **!!direkt zum Drucker und ueberpruefen ob die Endstops funktionieren indem beide Endstops per Hand gedrueckt werden!!**
+16. Z-Achse homen !!direkt zum Drucker und ueberpruefen ob die Endstops funktionieren indem beide Endstops per Hand gedrueckt werden!!
+
 ## Start- und End-GCode definieren
 Es ist ebenfalls sinnvoll einen Start- und Ende-GCode zu definieren. Hier werden die Schritte vor und nach dem Druck definiert. Der Vorteil hieran ist, dass Slicer-Uebergreifend Einstellungen definiert werden koennen und somit auch Einstellungen gaendert werden koennen, ohne das ein Modell neu geslict werden muss. Folgende Einstellung habe ich definiert (einfach am Ende der `printer.cfg` einfuegen):
 ```
