@@ -38,6 +38,55 @@ Kurze Anleitung wie man Klipper auf den Anycubic Mega S mit einem Trigorilla Boa
 ## Start- und End-GCode definieren
 Es ist ebenfalls sinnvoll einen Start- und Ende-GCode zu definieren. Hier werden die Schritte vor und nach dem Druck definiert. Der Vorteil hieran ist, dass Slicer-Uebergreifend Einstellungen definiert werden koennen und somit auch Einstellungen gaendert werden koennen, ohne das ein Modell neu geslict werden muss. Folgende Einstellung habe ich definiert (einfach am Ende der `printer.cfg` einfuegen):
 
+{% raw %}
+```
+[gcode_macro START_PRINT]
+gcode:
+    {% set BED_TEMP = params.BED_TEMP|default(85)|float %}
+    {% set EXTRUDER_TEMP = params.EXTRUDER_TEMP|default(250)|float %}
+    # Start bed heating
+    M140 S{BED_TEMP}
+    # Use absolute coordinates
+    G90
+    # Wait for bed to reach temperature
+    M190 S{BED_TEMP}
+    # Set and wait for nozzle to reach temperature
+    M109 S{EXTRUDER_TEMP}
+    # Home the printer
+    G28
+    # Set speed to 1200mm/min
+    G1 F1200.0
+    # Move to 5,1
+    G1 X10 Y1 Z0.2
+    # Prime hotend
+    G1 X100 E20
+    # Reset extruder position
+    G92 E0.0
+    # Move Y to 2
+    G1 Y2
+    # Prime the hotend
+    G1 X10 E20
+    # Reset extruder position
+    G92 E0.0
+    # Set speed to travel speed
+    G1 F{speed_travel}
+
+[gcode_macro END_PRINT]
+gcode:
+    # Turn off bed, extruder, and fan
+    M140 S0
+    M104 S0
+    M106 S0
+    # Move nozzle away from print while retracting
+    G91
+    G1 X-2 Y-2 E-3 F300
+    # Raise nozzle by 10mm
+    G1 Z10 F3000
+    G90
+    # Disable steppers
+    M84
+```
+{% endraw %}
 
 Im Slice muss jetzt nur noch als Start-GCode `START_PRINT` und als End-GCode `END_PRINT` gesetzt werden.
 
