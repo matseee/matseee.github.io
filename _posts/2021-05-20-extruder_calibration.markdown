@@ -12,9 +12,13 @@ Kurze Anleitung wie man einen Extruder kalibriert. Hierfuer wird [Octoprint](htt
     - Klipper: Hotend aufheizen
 3. Ueber die Octoprint-UI 100mm extrudieren.
 4. Das extrudierte Filament messen (bspw. `104.71mm`)
-5. `100mm / 104.71mm = 0.955018622863`
+5. ...
+    - Marlin: `100mm / 104.71mm = 0.955018622863`
+    - Klipper: `104.71mm / 100.00mm = 1.0471`
 6. ...
     - Marlin: Mit `M503` den aktuellen `E` Wert auslesen. `E = alt.E x 0.955018622863`. Mit `M92 EXXX.X` wird der neue Wert gesetzt ([`M92`](https://marlinfw.org/docs/gcode/M092.html)). `M500` speichert die Anpassung im EEPROM ([`M500`](https://marlinfw.org/docs/gcode/M500.html)).
-    - Klipper: Aus der `printer.cfg` den aktuellen `rotation_distance`-Wert des Extruders mal den zuvor errechneten Wert (bspw. `rotation_distance = 7.808 * 0.955018622863` und anschliessend auf drei Stellen runden.
+    - Klipper: Aus der `printer.cfg` den aktuellen `rotation_distance`-Wert des Extruders mal den zuvor errechneten Wert (bspw. `rotation_distance = 7.808 * 1.0471` und anschliessend auf drei Stellen runden.
+7. ...
+    - Marlin: Mit dem Befehl `M302 P0` die Kalte-Extrusions-Pruefung aktivieren.
 
 Fertig.
