@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kalibrierung des Extruders (Bowden)"
+title: "Kalibrierung des Extruders"
 date: 2021-05-20 23:00:00 +0200
 categories: ["3D-Printing"]
 ---
