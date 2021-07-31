@@ -23,11 +23,15 @@ Kurze Anleitung wie man ein Raspberry Pi 4 via UART mit dem SKR 1.4 Turbo verbin
 
 
 ## Stromversorgung des Raspberry PI mit einem LM2596 StepDown Converter
-tbd.
+Der Raspberry PI kann per StepDown-Converter direkt an einen 12V Anschluss des Anycubic Netzteils angeschlossen werden.
+
+1. Hierfuer wird zunaechst ein Kabel (+5V / GND) an den Power-In Anschluss des Raspberry PIs geloetet. GND wird an TP12 und +5V an TP1 geloetet:
+   ![Raspberry_PI_LOETSTELLE](/assets/images/2021-08-01_pi-powerin.png) 
+2. Anschliessend wird ein 12V Ausgang an den LM2596 angeschlossen, dieser per Stellschraube auf eine Ausgangsspannung von 5V eingestellt und der Ausgang mit dem Raspberry PI verbunden. Die folgende Grafik zeigt die Verbindung:
+   ![Raspberry_PI_POWERCOMPLETE](/assets/images/2021-08-01_pi-power-complete.png)
 
 ## Raspberry PI in Anycubic Gehaeuse verbauen
-tbd.
-- ![Raspberry PI & SKR1.4 Adapter](/assets/images/2021-07-31_I3_MEGA_S_SKR1_4_MOUNT.png)
-- [SKR 1.4 & Raspberry PI Adapter (thingiverse.com/thing:4919461)](https://www.thingiverse.com/thing:4919461)
+Der Raspberry PI sowie das SKR 1.4 wurde mittels einem [SKR 1.4 & Raspberry PI Adapter (thingiverse.com/thing:4919461)](https://www.thingiverse.com/thing:4919461) im Gehaeuse des Anycubics eingebaut. Die Nachfolgende Grafik veranschaulicht den Aufbau. Hierbei sollte dieser eigtl. noch einmal angepasst werden, da fuer die SD Karte des SKR1.4 kein Platz mehr bleibt sowie keine Halterung fuer einen Luefter vorhanden ist.
+    ![Raspberry PI & SKR1.4 Adapter](/assets/images/2021-07-31_I3_MEGA_S_SKR1_4_MOUNT.png)
 
 Fertig.
