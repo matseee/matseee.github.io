@@ -16,10 +16,23 @@ Kurze Anleitung wie man ein Raspberry Pi 4 via UART mit dem SKR 1.4 Turbo verbin
     ```
     [mcu]
     serial: /dev/ttyAMA0
+    baud: 250000
     restart_method: command
     ```
 4. Verkabelung vom Raspberry PI zum SKR 1.4:
     ![SKR_14_RASPBERRY_PI_UART_CONNECT](/assets/images/2021-07-31_SKR1_4-Raspberry-PI-UART-Connection.png)
+
+5. Fuer das SKR 1.4 muss die Firmware neukompeliert werden, da sich die serielle Steuerung geaendert hat. Hierfuer wird `make menuconfig` wie folgt konfiguriert und anschliessend auf das SKR 1.4 uebertragen.
+    ```
+    [*] Enable extra low-level configuration options
+        Micro-controller Architecture (LPC176x (Smoothieboard))  --->
+        Processor model (lpc1769 (120 MHz))  --->
+    [*] Target board uses Smoothieware bootloader
+    [ ] Use USB for communication (instead of serial)
+    (250000) Baud rate for serial port
+    [ ] Specify a custom step pulse duration
+    ()  GPIO pins to set at micro-controller startup
+    ```
 
 
 ## Stromversorgung des Raspberry PI mit einem LM2596 StepDown Converter
