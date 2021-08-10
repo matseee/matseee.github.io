@@ -8,6 +8,18 @@ layout: default
     {%-endif-%}
 </header>
 
+<ul>
+    <li>last projects:</li>
+    <ul>
+        {% for post in site.categories.Project %}
+        <li>
+            <span>{{- post.date | date: site.theme_config.date_format -}}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</ul>
+
 {%-include menu_item.html collection=site.data.menu.entries-%}
 
 {{ content }}
