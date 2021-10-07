@@ -8,7 +8,7 @@ Kurze Anleitung wie man einen [BLTouch 3.1](https://www.antclabs.com/bltouch-v3)
 
 ## BLTouch-Pins ermitteln und konfigurieren
 1. Erweitern der `printer.cfg` um den `bltouch` Block.
-    ```
+    ```conf
     ...
     [bltouch]
     sensor_pin: ^PXX
@@ -18,7 +18,7 @@ Kurze Anleitung wie man einen [BLTouch 3.1](https://www.antclabs.com/bltouch-v3)
 2. Um den BLTouch ansteuern zu koennen, muessen die richtigen Pins konfiguriert werden. Der Control-Pin steuert das ausfahren des Arms und ist demnach ein Servo-Pin. Der Sensor-Pin ist ein Limit-Switch, ist demnach auch invertiert und wird ausgeloest sobald der BLTouch ausgeloest wird. Die Arduino-Pinbelegung muss fuer Klipper auf die Port-Definition gemappt werden. Meine Konfiguration sieht wie folgt aus:
     ![TRIGORILLA_10_PINOUT](/assets/images/2021-05-16_TRIGORILLA_10_PINOUT.png)
     Der Servo-Pin des BLTouchs hat den Arduino Pin `D11`, jener ist der Port `B5` => `control_pin: PB5` (`P` fuer Port). Der Sensor-Pin des BLTouchs ist an den Arduino Pin `D2` angeschlossen, welcher der Port `E4` ist => `sensor_pin: ^PE4`. Damit Klipper die Konfiguration des BLTouch Sensors annimmt, wird ein Z-Offset verlangt, dieses koennen wir erst einmal auf 0 stellen. In Summe ergibt das folgende Konfiguration:
-    ```
+    ```conf
     [bltouch]
     sensor_pin: ^PE4
     control_pin: PB5
@@ -28,7 +28,7 @@ Kurze Anleitung wie man einen [BLTouch 3.1](https://www.antclabs.com/bltouch-v3)
 
 ## X,Y-Offset konfigurieren
 Auf meinem Anycubic i3 Mega befindet sich der [MK4 X-Carriage](https://www.thingiverse.com/thing:3537449). Dieser hat feste Werte fuer das X- und Y-Offset (X=+29, Y=-15). Fuer andere BLTouch-Halterungen muessen andere Werte gewaehlt werden. Die `printer.cfg` wird wie folgt angepasst:
-```
+```conf
 [bltouch]
 sensor_pin: ^PE4
 control_pin: PB5
@@ -45,7 +45,7 @@ Um das Z-Offset zu ermitteln bietet Klipper ein Kalibrierungs-Tool. Dieses Tool 
 
 ## Mesh-Erstellen
 Damit ein automatisches Mesh-Bed-Leveling durchgefuehrt werden kann, benoetigt Klipper noch die Informationen wie das Mesh aussehen soll. Diese Informationen werden im `bed_mesh`-Block der `printer.cfg` konfiguriert. Die Konfiguration ist ziemlich selbsterklaerend (ansonsten guck [hier](https://www.klipper3d.org/Bed_Mesh.html)):
-```
+```conf
 [bed_mesh]
 speed: 300
 horizontal_move_z: 5
@@ -56,7 +56,7 @@ probe_count: 5,5
 
 ## Auto-Bed-Leveling im Start-Code einfuegen
 Um das Auto-Bed-Leveling vor jedem Druck durchgefuehrt werden soll, muss im Slicer-Programm ein Befehl nach dem Homing hinzugefuegt werden. In Marlin konnte dies einfach per `G29` geschehen, Klipper kennt diesen G-Code jedoch nicht. Das Klipper Equivalent ist `BED_MESH_CALIBRATE`. Wenn du trotzdem `G29` nutzen willst, kannst du in deiner `printer.cfg` ein [G-Code Macro](https://www.klipper3d.org/G-Codes.html#g-code-macro-commands) hinterlgen.
-```
+```conf
 [gcode_macro G29]
 gcode:
     BED_MESH_CALIBRATE
