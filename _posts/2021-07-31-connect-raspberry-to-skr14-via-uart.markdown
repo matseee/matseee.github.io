@@ -8,12 +8,12 @@ Kurze Anleitung wie man ein Raspberry Pi 4 via UART mit dem SKR 1.4 Turbo verbin
 
 ## Kommunikation zwischen Raspberry PI und SKR 1.4 per UART
 1. Zunaechst wird der Raspberry PI auf die UART Kommunikation vorbereitet. Hierfuer muss in der `/boot/config.txt` folgende Zeile hinzugefuegt werden:
-    ```
+    ```conf
     dtoverlay=pi3-miniuart-bt
     ```
 2. Anschliessend wird die `/boot/cmdline.txt` des Raspberry PIs angepasst. Hierbei muss die serielle Konsolenausgabe zur Frequenz `115200` entfernt werden. Also `console=serial0,115200` aus der `/boot/cmdline.txt` loeschen und speichern.
 3. Klippers `pinter.cfg` muss auf den seriellen Eingang umgeschaltet werden. Hierfuer muss der `[mcu]`-Block der `printer.cfg` wie folgt angepasst werden:
-    ```
+    ```conf
     [mcu]
     serial: /dev/ttyAMA0
     baud: 250000
