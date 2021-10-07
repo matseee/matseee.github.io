@@ -19,19 +19,15 @@ body[a="dark"] { @include dark-appearance; }
   body[a="auto"] { 
     @include dark-appearance; 
   }
-
-  #scroll-progress-container {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 1rem;
-    z-index: 10000;
-  }
   
-  #scroll-progress-bar {
-    width: 0%;
-    height: 100%;
-    background: #7983ff;
+  .scroll-progress-bar {
+    background: rgb(0, 0, 238);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .scroll-progress-bar {
+    background: rgb(0, 0, 238);
   }
 }
 
@@ -74,7 +70,7 @@ p { margin: 1rem 0; }
 
 li { margin: 0.4rem 0; }
 
-*:target { background: #7983ff; }
+*:target { background: rgb(0, 0, 238); }
 
 .w {
   max-width: 1024px;
@@ -98,11 +94,6 @@ table, th, td {
   padding: 0.4rem;
 }
 
-// code {
-//   color: white;
-//   background: black;
-// }
-
 div.highlighter-rouge code {
   display: block;
   overflow-x: auto;
@@ -122,4 +113,20 @@ img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+}
+
+.scroll-progress-container {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 0.8rem;
+  z-index: 10000;
+}
+
+.scroll-progress-bar {
+  width: 0%;
+  height: 0.8rem;
 }
