@@ -3,7 +3,9 @@
 {%- include head.html -%}
 
 <body a="{{ site.theme_config.appearance | default: " auto" }}">
-  <div id="scroll-progress"></div>
+  <div id="scroll-progress-container">
+    <div id="scroll-progress-bar"></div>
+  </div>
   <main class="page-content" aria-label="Content">
     <div class="w">
       {{ content }}
