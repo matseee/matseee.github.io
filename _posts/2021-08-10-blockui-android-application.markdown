@@ -12,9 +12,11 @@ Ich hoere gerne Dokumentationen oder Podcasts auf Youtube ueber mein Android Sma
 #### MainActivity
 Die MainActivity der Anwendung ueberpruft ob BlockUI die Berechtigung zum Rendern ueber anderen Apps besitzt, ansonsten wird ein Dialog mit Aufforderung zur Setzung der Berechtigung erstellt. Dieser Dialog verzweigt direkt zur entsprechenden Einstellung. Mit dem folgenden zwei Zeilen kann die Einstellungs-App des Androidsystems gestartet werden.
 
-```kotlin
+```
+{% highlight kotlin %}
 val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName"))
 startActivityForResult(intent, Activity.RESULT_OK)
+{% endhighlight %}
 ```
 Nachdem die App wieder im Vordergrund ist, wird erneut eine Berechtigungspruefung durchgefuehrt. Faellt die Pruefung positiv aus, wird der `NotificationService` gestartet.
 
@@ -23,7 +25,8 @@ Der `NotificationService` erstellt eine Notification in der Android Statusbar. U
 
 Um die Notification zu erstellen, muss zunaechst ein Notification-Channel und anschliessend die Notification selber erstellt werden. Zuletzt wird die Notification per `startForeground()` gestartet. Folgender Quellcode erstellt einen Channel, eine Notificaiton und startet diese:
 
-```kotlin
+```
+{% highlight kotlin %}
 // Erstellung des Notification-Channels
 val channel = NotificationChannel(getString(R.string.channel_id),
         "BLOCKUI Notification Channel",
@@ -44,21 +47,27 @@ val notification = NotificationCompat.Builder(this, getString(R.string.channel_i
         .build()
 
 startForeground(101, notification)
+{% endhighlight %}
 ```
 Damit ein Vordergrund-Service gestartet werden kann, muessen folgende Berechtigungen in der `AndroidManifest.xml` hinzuegefuegt werden:
-```xml
+```
+{% highlight xml %}
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+{% endhighlight %}
 ```
 
 #### BlockUIService
 Dieser Service wird gestartet, sobald die Notification angeklickt wird. Im Grunde erstellt der Service eine Durchsichtige View ueber den gesamten Bildschirm und verhindert somit, dass die Touch-Eingaben die darunterliegende Anwendung erreicht. Damit die Anwendung ueber andere Anwendung rendern kann, muss die Berechtigung `Draw over other Apps` aktiviert sein und in der `AndroidManifest.xml` folgende Berechtigung enthalten sein:
-```xml
+```
+{% highlight xml %}
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+{% endhighlight %}
 ```
 
 Die View wird mithilfe des [`WindowManager`](https://developer.android.com/reference/android/view/WindowManager?hl=en) erstellt und ueber die andere App gezeichnet. Der Code zur Erstellung der View sieht wie folgt aus:
-```kotlin
+```
+{% highlight kotlin %}
 // WindowManager ermitteln
 windowManager =
     applicationContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager?
@@ -88,6 +97,7 @@ viewOverlay = inflater.inflate(R.layout.overlay, null)
 
 // Rendern der View
 windowManager!!.addView(viewOverlay, layoutParams)
+{% endhighlight %}
 ```
 
 Die View enthaelt standardmaesig ausschliessend ein `Unlock`-Button, welcher eine Nummer-Feld oeffnet. Per Eingabe des generierten und dargestellten 4-stelligen Pins wird die View wieder geloescht. 
