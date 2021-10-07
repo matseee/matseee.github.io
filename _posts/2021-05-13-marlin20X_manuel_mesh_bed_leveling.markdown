@@ -16,15 +16,15 @@ Kurze Anleitung wie ein Mesh-Bed-Leveling per LCD Input mit der Marlin 2.0.X dur
 1. `Save EEPROM`
 1. Drucker neustarten
 1. Im Slicer-Programm muss nun das Mesh-Bed definiert werden, hierzu muessen die Befehle `M501` und `M420 S1` direkt nach dem Homing der Z-Achse ausgefuehrt werden:
-    {% highlight %}
+    ```
     ...
     G28 Z0      ; Home Z
     M501        ; Load all saved settings from EEPROM
     M420 S1     ; Set bed level state (S = Enabled [1] / Disabled [0])
     ...
-    {% endhighlight %} 
+    ```
 1. Mit dem Befehl `G29 T` kann das aktuelle Mesh ausgegeben werden:
-   {% highlight %}
+   ```
    Send: G29 T
     Recv: Mesh Bed Leveling OFF
     Recv: 5x5 mesh. Z offset: 0.00000
@@ -38,6 +38,6 @@ Kurze Anleitung wie ein Mesh-Bed-Leveling per LCD Input mit der Marlin 2.0.X dur
     Recv: 
     Recv: X:0.00 Y:0.00 Z:0.00 E:0.00 Count X:0 Y:0 Z:0
     Recv: ok
-   {% endhighlight %}
+   ```
 
 Fertig.
