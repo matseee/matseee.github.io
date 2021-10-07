@@ -25,7 +25,7 @@ Der `NotificationService` erstellt eine Notification in der Android Statusbar. U
 Um die Notification zu erstellen, muss zunaechst ein Notification-Channel und anschliessend die Notification selber erstellt werden. Zuletzt wird die Notification per `startForeground()` gestartet. Folgender Quellcode erstellt einen Channel, eine Notificaiton und startet diese:
 
 
-{% highlight kotlin %}
+```kotlin
 // Erstellung des Notification-Channels
 val channel = NotificationChannel(getString(R.string.channel_id),
         "BLOCKUI Notification Channel",
@@ -46,27 +46,27 @@ val notification = NotificationCompat.Builder(this, getString(R.string.channel_i
         .build()
 
 startForeground(101, notification)
-{% endhighlight %}
+```
 
 Damit ein Vordergrund-Service gestartet werden kann, muessen folgende Berechtigungen in der `AndroidManifest.xml` hinzuegefuegt werden:
 
-{% highlight xml %}
+```xml
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-{% endhighlight %}
+```
 
 
 #### BlockUIService
 Dieser Service wird gestartet, sobald die Notification angeklickt wird. Im Grunde erstellt der Service eine Durchsichtige View ueber den gesamten Bildschirm und verhindert somit, dass die Touch-Eingaben die darunterliegende Anwendung erreicht. Damit die Anwendung ueber andere Anwendung rendern kann, muss die Berechtigung `Draw over other Apps` aktiviert sein und in der `AndroidManifest.xml` folgende Berechtigung enthalten sein:
 
-{% highlight xml %}
+```xml
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-{% endhighlight %}
+```
 
 
 Die View wird mithilfe des [`WindowManager`](https://developer.android.com/reference/android/view/WindowManager?hl=en) erstellt und ueber die andere App gezeichnet. Der Code zur Erstellung der View sieht wie folgt aus:
 
-{% highlight kotlin %}
+```kotlin
 // WindowManager ermitteln
 windowManager =
     applicationContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager?
@@ -96,7 +96,7 @@ viewOverlay = inflater.inflate(R.layout.overlay, null)
 
 // Rendern der View
 windowManager!!.addView(viewOverlay, layoutParams)
-{% endhighlight %}
+```
 
 
 Die View enthaelt standardmaesig ausschliessend ein `Unlock`-Button, welcher eine Nummer-Feld oeffnet. Per Eingabe des generierten und dargestellten 4-stelligen Pins wird die View wieder geloescht. 
