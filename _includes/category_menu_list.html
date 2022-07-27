@@ -1,5 +1,8 @@
-{% for item in include.collection %}
-<span>
-    <a href="{{ item }}"><strong>{{ item }}</strong></a>
-</span>
-{% endfor %}
+
+<div class="flex-container">
+    {% for item in include.collection %}
+    <div class="flex-item flex-item-center">
+        <a href="{{ item }}"><strong>{{ item }}</strong></a>
+    </div>
+    {% endfor %}
+</div>

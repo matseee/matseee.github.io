@@ -1,10 +1,15 @@
+{%-if include.show_search-%}
+
 <div class="flex-container">
     <div class="flex-item">
-        <a href="{{ '/' | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+        <h1>{{ include.title }}</h1>
     </div>
-
     <div class="flex-item flex-item-end" style="min-width: 245px">
         {%-include search_head.html-%}
     </div>
 </div>
+
+{%-else-%}
+<h1>{{ include.title }}</h1>
+{%-endif-%}
 

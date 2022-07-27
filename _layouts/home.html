@@ -2,9 +2,12 @@
 layout: default
 ---
 <header>
-    <h1>{{ site.title }}</h1>
+    {%-include page_title.html title=site.title show_search=true-%}
+
     {%-if site.theme_config.show_description-%}
+
     <p>{{ site.description }}</p>
+
     {%-endif-%}
 </header>
 

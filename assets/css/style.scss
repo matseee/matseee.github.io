@@ -120,6 +120,30 @@ img {
   margin: 0 auto;
 }
 
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.flex-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.flex-item-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: initial;
+}
+
+.flex-item-end {
+  align-items: end;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .scroll-progress-container {
   overflow: hidden;
   position: sticky;
