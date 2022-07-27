@@ -78,6 +78,18 @@ li { margin: 0.4rem 0; }
   padding: 4rem 2rem;
 }
 
+@media only screen and (max-width: 480px) {
+  .w {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+  }
+
+  ul {
+    padding-inline-start: 10px;
+  }
+}
+
 hr {
   text-align: center;
   border: 0;
@@ -125,7 +137,18 @@ img {
   align-items: center;
 }
 
+.flex-container-noresp {
+  display: flex;
+  align-items: center;
+}
+
 .flex-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.flex-item-noresp {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: auto;
@@ -143,6 +166,21 @@ img {
   display: flex;
   flex-direction: column-reverse;
 }
+
+@media only screen and (max-width: 520px) {
+  .flex-container {
+    display: flex;
+    align-items: start;
+    flex-direction: column-reverse;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .flex-item {
+    width: 100%;
+  }
+}
+
 
 .scroll-progress-container {
   overflow: hidden;
