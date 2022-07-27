@@ -2,7 +2,7 @@
 layout: post
 title:  "AssaultHook - internal cheat written in c++"
 date: 2022-07-23 00:35:00 +0200
-categories: ["Programming", "Gamehacking", "c++", "Reverse engineering"]
+categories: ["Projects", "Programming"]
 ---
 AssaultHook is an internal cheat for the game [AssaultCube](https://github.com/assaultcube/AC) written in c++. I wrote this cheat to refresh my introduction to programming, which was cheat development. The game AssaultCube was chosen for this because it needs little resources, is open source and well documented for cheat development. To find the simple memory addresses of the game the program CheatEngine was used. This was followed by the use of ReClass.net to build structures from the memory area. To find game functions for example the NoRecoil function the debugger x64dbg and the SRE(software reverse engineering) framework ghidra (mostly disassembly and decompilation) was used. The guides on [guidedhacking.com](https://guidedhacking.com) are the foundation on which the entire cheat development is based. If you are interested in learning the basics of cheat development and already know a programming language, this is the best source.
 

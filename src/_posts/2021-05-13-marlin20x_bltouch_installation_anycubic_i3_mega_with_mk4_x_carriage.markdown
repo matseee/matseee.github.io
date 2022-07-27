@@ -2,7 +2,7 @@
 layout: post
 title:  "Marlin 20X: BLTouch Installation auf einem Anycubic i3 Mega mit MK4 X-Carriage E3D V5"
 date: 2021-05-13 07:35:00 +0200
-categories: ["3D-Printing", "marlin"]
+categories: ["3D-Printing"]
 ---
 Kurze Zusammenfassung wie man einen BLTouch mit Marlin 2.0.X ([Knutwurst 1.1.9](https://github.com/knutwurst/Marlin-2-0-x-Anycubic-i3-MEGA-S)) auf einem Anycubic i3 Mega mit [MK4 X-Carriage](https://www.thingiverse.com/thing:3537449) E3D V5 einrichtet.
 

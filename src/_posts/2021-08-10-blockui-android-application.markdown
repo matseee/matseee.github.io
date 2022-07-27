@@ -2,7 +2,7 @@
 layout: post
 title: "BlockUI"
 date: 2021-08-11 02:00:00 +0200
-categories: ["Project"]
+categories: ["Projects"]
 ---
 Ich hoere gerne Dokumentationen oder Podcasts auf Youtube ueber mein Android Smartphone. Ueberlicherweise trage ich dabei Kopfhoerer und beschaeftige mich dabei mit etwas anderem. Wenn ich beispielsweise die Waesche mache, befindet sich mein Smartphone in der Hosentasche und dabei kommt es oefter vor, dass meine Bewegungen das Touchdisplay des Handys beruehren und ein anderes Video startet. Nachdem mir dies einige Male passiert ist, habe ich nach einer App gesucht, welche die Toucheingaben sperrt. Ich habe auch eine funktionierende App gefunden, jedoch war diese mit Werbung ueberladen. Aus diesem Grund habe ich mich entschieden eine eigene App zu entwickeln. Im folgenden will ich das Grundprinzip der [BlockUI](https://github.com/matseee/block-ui) App erlaeutern. 
 

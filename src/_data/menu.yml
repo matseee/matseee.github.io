@@ -1,0 +1,14 @@
+entries:
+  - title: "last projects:"
+    post_list:
+      limit: 3
+      category: "Projects"
+      show_more: true
+      show_more_text: see projects...
+      show_more_url: projects.html
+  - title: "last posts:"
+    post_list:
+      limit: 3
+      show_more: true
+      show_more_text: see archive...
+      show_more_url: archive.html

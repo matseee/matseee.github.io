@@ -1,7 +1,0 @@
-entries:
-  - title: "last posts:"
-    post_list:
-      limit: 5
-      show_more: true
-      show_more_text: see archive...
-      show_more_url: archive.html

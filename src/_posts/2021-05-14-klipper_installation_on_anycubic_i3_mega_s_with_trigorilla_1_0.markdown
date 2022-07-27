@@ -2,7 +2,7 @@
 layout: post
 title: "Klipper: Installation (mit Octoprint) auf dem Anycubic Mega S (Trigorilla Board 1.0)"
 date: 2021-05-14 18:00:00 +0200
-categories: ["3D-Printing", "klipper"]
+categories: ["3D-Printing"]
 ---
 Kurze Anleitung wie man Klipper auf den Anycubic Mega S mit einem Trigorilla Board 1.0 installiert/flasht. Hierfuer wird ein Raspberry PI mit [Octoprint](https://octoprint.org/download/) vorinstalliert benoetigt. **Raspberry PI muss mit dem Board per USB verbunden sein...**
 

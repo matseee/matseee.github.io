@@ -2,7 +2,7 @@
 layout: post
 title: "Klipper: BLTouch Konfiguration auf dem Anycubic Mega S (Trigorilla Board 1.0)"
 date: 2021-05-16 16:00:00 +0200
-categories: ["3D-Printing", "klipper"]
+categories: ["3D-Printing"]
 ---
 Kurze Anleitung wie man einen [BLTouch 3.1](https://www.antclabs.com/bltouch-v3) auf einem Anycubic i3 Mega S mit einem Trigorilla Board 1.0 konfiguriert. Der BLTouch ist nach [dieser Anleitung](https://github.com/knutwurst/Marlin-2-0-x-Anycubic-i3-MEGA-S/wiki/BLTouch-Installation-(deutsch)) angeschlossen. ([Zuvor war Marlin 2.0.X installiert](https://matse.work/3d-printing/2021/05/13/bltouch_installation_anycubic_i3_mega_with_mk4_x_carriage.html)). Je Nach X-Carriage koennen sich die X,Y-Offsets unterscheiden, waehlt hierbei die richtigen Offsets! Beim Start des Druckers sollte sich der BLTouch in Sekundentakt ausfahren, falls dies nicht passiert ist der BLTouch nicht richtig angeschlossen!
 

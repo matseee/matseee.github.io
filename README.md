@@ -3,5 +3,6 @@ my webpage based on jeykll.
 
 ## develop
 ```
+cd src/
 bundle exec jekyll serve
 ```

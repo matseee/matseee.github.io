@@ -1,0 +1,28 @@
+title: matse.work
+email: m@tthias.space
+description: >- # this means to ignore newlines until "baseurl:"
+  hello i'm Matthias Fischer, a software development enthusiast since the age of 13. 
+  Since 2017 I'm working in a German software company as a software engineer. In my tech stack I mainly deal with SAP, SAP UI5 and Angular.
+  Here you can find some stuff about technology (most likely programming and 3d printing).
+  
+  
+baseurl: ""
+url: "https://matse.work"
+
+include: ['_pages']
+
+# Build settings
+remote_theme: no-style-please
+
+theme_config:
+  appearance: "dark"
+  back_home_text: ".."
+  date_format: "%Y-%m-%d"
+  show_description: true
+
+sass:
+  style: :compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

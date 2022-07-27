@@ -2,7 +2,7 @@
 layout: post
 title: "Marlin 20X: Manuelles Mesh-Bed-Leveling"
 date: 2021-05-13 03:45:00 +0200
-categories: ["3D-Printing", "marlin"]
+categories: ["3D-Printing"]
 ---
 Kurze Anleitung wie ein Mesh-Bed-Leveling per LCD Input mit der Marlin 2.0.X durchgefuehrt wird.
 

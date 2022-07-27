@@ -2,7 +2,7 @@
 layout: post
 title:  "Angular Material - Week selection"
 date: 2022-02-23 00:35:00 +0200
-categories: ["Programming", "Angular", "Frontend"]
+categories: ["Programming"]
 ---
 For an planing software I needed a simple solution of an week selection input.
 The frontend was developed with the framework [angular](https://angular.io/) and used mainly the components of [angular material](https://material.angular.io/).

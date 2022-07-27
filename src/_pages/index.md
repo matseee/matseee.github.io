@@ -1,6 +1,7 @@
 ---
 layout: home
 title: hi I'm Matthias :)
+permalink: "/"
 ---
 ## contact me
 - social: [github](https://github.com/matseee)
