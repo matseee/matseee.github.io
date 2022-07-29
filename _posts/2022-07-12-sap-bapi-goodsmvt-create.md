@@ -22,14 +22,14 @@ DATA lt_return LIKE TABLE OF ls_return.
 DATA lv_error  TYPE abap_bool.
 DATA lv_errmsg TYPE string.
 
-* Fill bapi2017_gm_head_01 structure
+" Fill bapi2017_gm_head_01 structure
 ls_header-pstng_date        = datum.   " Booking date
 ls_header-doc_date          = datum.   " Reference date
 ls_header-ref_doc_no        = xblnr.   " Reference number
 
-* Fill bapi2017_gm_item_create structure
+" Fill bapi2017_gm_item_create structure
 
-* goods receipt for purchase order:
+" goods receipt for purchase order:
 ls_item-po_number               = ebeln.
 ls_item-po_item                 = ebelp.
 ls_item-vendrbatch              = lichn.
@@ -38,13 +38,13 @@ ls_item-move_type               = '101'. " 101=gr; 102=gr storno;
                                          " 103=gr into blocked stock; 104=gr into blocked stock storno
 ls_code-gm_code                 = '01'.
 
-* goods receipt for process order
+" goods receipt for process order
 ls_item-orderid                 = aufnr.
 ls_item-mvt_ind                 = 'F'.
 ls_item-move_type               = '101'. " 101=goods receipt; 102=goods receipt storno
 ls_code-gm_code                 = '02'.
 
-* goods issue for process order (reservation)
+" goods issue for process order (reservation)
 ls_item-orderid                 = aufnr.
 ls_item-reserv_no               = rsnum.
 ls_item-res_item                = rspos.
@@ -53,7 +53,7 @@ ls_item-mvt_ind                 = ''.
 ls_item-move_type               = '261'. " 261=goods issue; 262=goods issue storno
 ls_code-gm_code                 = '03'.
 
-* other values
+" other values
 ls_item-plant                   = werks_d.
 ls_item-stge_loc                = lgort_d.
 ls_item-material                = matnr.
@@ -64,10 +64,10 @@ ls_item-entry_uom_iso           = isocd_unit.
 ls_item-expirydate              = vfdat.
 ls_item-prod_date               = hsdat.
 
-* Multiple items are possible
+" Multiple items are possible
 APPEND ls_item TO lt_items.
 
-* Call function
+" Call function
 CALL FUNCTION 'BAPI_GOODSMVT_CREATE'
   EXPORTING
     goodsmvt_header  = ls_header
@@ -80,19 +80,21 @@ CALL FUNCTION 'BAPI_GOODSMVT_CREATE'
     goodsmvt_item    = lt_items
     return           = lt_return.
 
-* Parse return table
+" Parse return table
 LOOP AT lt_return INTO ls_return.
   IF ls_return-type = 'E' OR ls_return-type = 'A'.
+
     " Maybe log the error message  
     MESSAGE ID ls_return-id TYPE ls_return-type NUMBER ls_return-number
-      WITH ls_return-message_v1 ls_return-message_v2 ls_return-message_v3 ls_return-message_v4
+      WITH ls_return-message_v1 ls_return-message_v2 
+           ls_return-message_v3 ls_return-message_v4
       INTO lv_errmsg.
 
     lv_error = abap_true.
   ENDIF.
 ENDLOOP.
 
-* Rollback or Commit work
+" Rollback or Commit work
 IF lv_error = abap_true.
   CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
 ELSE.

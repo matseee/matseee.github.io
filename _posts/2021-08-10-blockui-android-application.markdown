@@ -12,10 +12,10 @@ Ich hoere gerne Dokumentationen oder Podcasts auf Youtube ueber mein Android Sma
 #### MainActivity
 Die MainActivity der Anwendung ueberpruft ob BlockUI die Berechtigung zum Rendern ueber anderen Apps besitzt, ansonsten wird ein Dialog mit Aufforderung zur Setzung der Berechtigung erstellt. Dieser Dialog verzweigt direkt zur entsprechenden Einstellung. Mit dem folgenden zwei Zeilen kann die Einstellungs-App des Androidsystems gestartet werden.
 
-{% highlight kotlin %}
+```kotlin
 val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName"))
 startActivityForResult(intent, Activity.RESULT_OK)
-{% endhighlight %}
+```
 
 Nachdem die App wieder im Vordergrund ist, wird erneut eine Berechtigungspruefung durchgefuehrt. Faellt die Pruefung positiv aus, wird der `NotificationService` gestartet.
 
