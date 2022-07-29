@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "SAP BAPI Book goods movement"
+title:  "SAP BAPI_GOODSMVT_CREATE"
 date: 2022-07-12 00:00:00 +0200
 categories: ["Programming", "SAP"]
 ---
-Simple code example how to use the bapi `BAPI_GOODSMVT_CREATE` .
+Simple code example how to use the bapi `BAPI_GOODSMVT_CREATE` to create a goods movement with abap.
 
 1. [Movement indicator (`mvt_ind`)](#movement-indicator)
 1. [Goods movement code (`gm_code`)](#goods-movement-code)
