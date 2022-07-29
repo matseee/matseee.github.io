@@ -1,31 +1,35 @@
-(function() {
+(function () {
 
-    // ScrollProgress bar
-    const scrollProgress = document.getElementById('scroll-progress-bar');
+  // ScrollProgress bar
+  const scrollProgress = document.getElementById('scroll-progress-bar');
 
-    window.addEventListener('scroll', () => {
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-  
-      scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
-    });
+  window.addEventListener('scroll', () => {
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 
-    // Toggle dark-light mode
-    const darkLightToggleImage = document.getElementById('darkLightToggle');
+    scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+  });
 
-    if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.body.classList.toggle('light');
+  // Toggle dark-light mode
+  const darkLightToggleImage = document.getElementById('darkLightToggle');
+
+  if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.toggle('light');
+    darkLightToggleImage.src = '/assets/dark.svg';
+  }
+
+  darkLightToggleImage.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+
+    if (darkLightToggleImage.src.indexOf('/assets/light.svg') > -1) {
       darkLightToggleImage.src = '/assets/dark.svg';
+    } else {
+      darkLightToggleImage.src = '/assets/light.svg';
     }
-  
-    darkLightToggleImage.addEventListener('click', () => {
-      document.body.classList.toggle('light');
-  
-      if (darkLightToggleImage.src.indexOf('/assets/light.svg') > -1 ) {
-        darkLightToggleImage.src = '/assets/dark.svg';
-      } else {
-        darkLightToggleImage.src = '/assets/light.svg';
-      }
-    });
+  });
 
 })();
+
+function onNavigateBack() {
+  history.go(-1);
+}
