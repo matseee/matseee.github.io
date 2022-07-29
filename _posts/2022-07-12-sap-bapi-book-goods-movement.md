@@ -7,7 +7,8 @@ categories: ["Programming", "SAP"]
 Simple code example how to use the bapi `BAPI_GOODSMVT_CREATE` .
 
 1. [Movement indicator (`mvt_ind`)](#movement-indicator)
-1. [Goodsmovement code (`gm_code`)](#goodsmovement-code)
+1. [Goods movement code (`gm_code`)](#goods-movement-code)
+1. [Movement types (`move_type`)](#movement-types)
 
 ```abap
 DATA ls_header TYPE bapi2017_gm_head_01.
@@ -110,7 +111,7 @@ ENDIF.
 | `F` 	| Goods movement for production order | 
 | `L` | Goods movement for delivery note |
 
-## Goodsmovement code ( `gm_code` )
+## Goods movement code ( `gm_code` )
 
 | code | transaction | description | 
 |---|---|---|
