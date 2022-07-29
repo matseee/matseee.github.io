@@ -102,18 +102,18 @@ ELSE.
 ENDIF.
 ```
 
-## Movement indicator ( `mvt_ind` )
+## Movement indicator
 
-| indicator | description |
+| indicator (`mvt_ind`) | description |
 |---|---|
 | ` ` | Goods movement w/o reference |
 | `B` 	|  Goods movement for purchase order |
 | `F` 	| Goods movement for production order | 
 | `L` | Goods movement for delivery note |
 
-## Goods movement code ( `gm_code` )
+## Goods movement code
 
-| code | transaction | description | 
+| code (`gm_code`) | transaction | description | 
 |---|---|---|
 | `01` | MB01 | Goods receipts for purchase order |
 | `02` | MB31 | Goods receipts for prod order |
@@ -123,11 +123,10 @@ ENDIF.
 | `06` | MB11 | Goods movement |
 | `07` | MB04 | Subsequent charging for material provided |
 
-## Movement types ( `move_type` )
-
+## Movement types
 ### Good Receipt - 100
 
-| type | description |
+| type (`move_type`) | description |
 | --- | --- |
 | `101` | Goods receipt for purchase order |
 | `103` | Goods receipt for purchase order to GR blocked stock |
