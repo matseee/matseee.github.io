@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "SAP BAPI_GOODSMVT_CANCLE"
+title:  "SAP BAPI_GOODSMVT_CANCEL"
 date: 2022-07-15 00:00:00 +0200
 categories: ["Programming", "SAP"]
 ---
-Simple code example how to use the bapi `BAPI_GOODSMVT_CANCLE` to cancle a material document.
+Simple code example how to use the bapi `BAPI_GOODSMVT_CANCEL` to cancle a material document.
 
 ```abap
 DATA ls_headret TYPE bapi2017_gm_head_ret.
