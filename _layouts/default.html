@@ -7,21 +7,11 @@
     <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
   </div>
   <main class="page-content" aria-label="Content">
-    <div class="w">
+    <div class="content">
       {{ content }}
     </div>
   </main>
 </body>
 
-<script>
-  const scrollProgress = document.getElementById('scroll-progress-bar');
-
-  window.addEventListener('scroll', () => {
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-
-    scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
-  });
-</script>
-
+<script src="/assets/js/main.js"></script>
 </html>

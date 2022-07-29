@@ -1,43 +1,28 @@
---- 
 ---
+--- 
 @import "github-syntax-dark.css";
+@import "./colors";
 
-// -------------- THEME SWITCHER -------------- //
-@mixin dark-appearance {
-  filter: invert(1);
-
-  img {
-    filter: invert(1);
-
-    &.ioda {
-      filter: invert(0);
-    }
-  }
-
-  .highlight {
-    filter: invert(0);
-  }
+:root {
+  --color-page-background: #{$color-black};
+  --color-text: #{$color-white};
+  --color-border: #{$color-primaryLight};
 }
 
-body[a="dark"] {
-  @include dark-appearance;
+.dark {
+  --color-page-background: #{$color-black};
+  --color-text: #{$color-white};
+  --color-border: #{$color-primaryLight};
 }
 
-
-@media (prefers-color-scheme: dark) {
-  body[a="auto"] {
-    @include dark-appearance;
-  }
-
-  .scroll-progress-bar {
-    background: rgb(0, 0, 238);
-  }
+.light {
+  --color-page-background: #{$color-white};
+  --color-text: #{$color-primary};
+  --color-border: #{$color-primary};
 }
 
-@media (prefers-color-scheme: light) {
-  .scroll-progress-bar {
-    background: rgb(0, 0, 238);
-  }
+* {
+  transition: all .2s ease;
 }
 
 @media only screen and (max-width: 480px) {
@@ -51,191 +36,192 @@ body[a="dark"] {
   }
 }
 
-// -------------------------------------------- //
-
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
-html,
-body {
-  background: white;
-}
-
 html {
-  height: 100%
-}
+  height: 100%;
+  background: var(--color-page-background);
 
-body {
-  color: black;
-  font-family: monospace;
-  font-size: 1.3rem;
-  line-height: 1.3;
-  margin: 0;
-  min-height: 100%;
-}
-
-.post-meta {
-  text-align: right;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 3rem;
-}
-
-hr {
-  margin: 2rem 0;
-}
-
-p {
-  margin: 1rem 0;
-}
-
-li {
-  margin: 0.4rem 0;
-}
-
-*:target {
-  background: rgb(0, 0, 238);
-}
-
-.w {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
-@media only screen and (max-width: 480px) {
-  .w {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0.5rem 2rem;
-  }
-
-  ul {
-    padding-inline-start: 10px;
-  }
-}
-
-hr {
-  text-align: center;
-  border: 0;
-
-  &:before {
-    content: '/////'
-  }
-
-  &:after {
-    content: attr(data-content) '/////'
-  }
-}
-
-table {
-  width: 100%;
-}
-
-table,
-th,
-td {
-  border: thin solid black;
-  border-collapse: collapse;
-  padding: 0.4rem;
-}
-
-div.highlighter-rouge code {
-  display: block;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  padding: 1rem;
-}
-
-code {
-  color: white;
-  background: #383838;
-  filter: invert(1);
-}
-
-blockquote {
-  font-style: italic;
-  border: thin solid black;
-  padding: 1rem;
-
-  p {
+  body {
+    background: var(--color-page-background);
+    color: var(--color-text);
+    font-family: monospace;
+    font-size: 1.3rem;
+    line-height: 1.3;
     margin: 0;
-  }
-}
+    min-height: 100%;
 
-img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
+    .scroll-progress-container {
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 0.8rem;
+      z-index: 10000;
+    
+      .scroll-progress-bar {
+        width: 0%;
+        height: 0.8rem;
+        background-color: $color-secondry;
+      }
+    }
+
+    #darkLightToggle {
+      margin-right: 0.5rem;
+    }
+
+    .content {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+
+      @media only screen and (max-width: 520px) {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 0.5rem 2rem;
+      }
+
+      /* HEADLINES */
+      h2, h3, h4, h5, h6 {
+        margin-top: 3rem;
+      }
+
+      /* TEXTS */
+      p {
+        margin: 1rem 0;
+      }
+
+      *:target {
+        color: $color-secondry;
+      }
+      
+      a:-webkit-any-link {
+        color: $color-secondry;
+        &:hover {
+          color: $color-secondayLight;
+        }
+        &:active {
+          color: $color-secondayDark;
+        }
+      }
+
+      /* CODE-SNIPPETS */
+      div.highlighter-rouge code {
+        display: block;
+        overflow-x: auto;
+        padding: 1rem;
+
+        color: $color-white;
+        background: $color-primaryLight;
+      }
+
+      /* TABLES */
+      @mixin table-border {
+        border: thin solid var(--color-border);
+        border-collapse: collapse;
+        padding: 0.4rem;
+      }
+      table {
+        width: 100%;
+        @include table-border();
+        
+        th, td {
+          @include table-border();
+        }
+      }
+
+      /* BLOCKQUOTE */
+      blockquote {
+        font-style: italic;
+        border: thin solid var(--color-border);
+        padding: 1rem;
+      
+        p {
+          margin: 0;
+        }
+      }
+
+      /* IMAGES */
+      img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* LISTS */
+      @media only screen and (max-width: 520px) {
+        ul {
+          padding-inline-start: 10px;
+        }
+      }
+      li {
+        margin: 0.4rem 0;
+      }
+      
+      /* HORIZONTAL-LINES */
+      hr {
+        margin: 2rem 0;
+        text-align: center;
+        border: 0;
+
+        &:before {
+          content: '/////'
+        }
+        &:after {
+          content: attr(data-content) '/////'
+        }
+      }
+
+      .post-meta {
+        text-align: right;
+      }
+    }
+  }
 }
 
 .flex-container {
   display: flex;
   align-items: center;
-}
 
-.flex-container-noresp {
-  display: flex;
-  align-items: center;
-}
+  &-no-resp {
+    display: flex;
+    align-items: center;
+  }
 
-.flex-item {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-}
-
-.flex-item-noresp {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-}
-
-.flex-item-center {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: initial;
-}
-
-.flex-item-end {
-  align-items: end;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-@media only screen and (max-width: 520px) {
-  .flex-container {
+  @media only screen and (max-width: 520px) {
     display: flex;
     align-items: start;
     flex-direction: column-reverse;
   }
-}
 
-@media only screen and (max-width: 520px) {
-  .flex-item {
-    width: 100%;
+  &-no-reverse {
+    @media only screen and (max-width: 520px) {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+    }
   }
-}
 
+  .flex-item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
 
-.scroll-progress-container {
-  overflow: hidden;
-  position: sticky;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 0.8rem;
-  z-index: 10000;
-}
+    @media only screen and (max-width: 520px) {
+      width: 100%;
+    }
 
-.scroll-progress-bar {
-  width: 0%;
-  height: 0.8rem;
+    &-center {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: initial;
+    }
+
+    &-end {
+      align-items: end;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
 }
