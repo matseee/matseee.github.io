@@ -1,4 +1,4 @@
----
+--- 
 --- 
 @import "github-syntax-dark.css";
 @import "./colors";
@@ -25,17 +25,6 @@
   transition: all .2s ease;
 }
 
-@media only screen and (max-width: 480px) {
-  figure {
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-  }
-
-  .highlight pre {
-    font-size: 0.5rem;
-  }
-}
-
 html {
   height: 100%;
   background: var(--color-page-background);
@@ -44,10 +33,23 @@ html {
     background: var(--color-page-background);
     color: var(--color-text);
     font-family: monospace;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     line-height: 1.3;
     margin: 0;
     min-height: 100%;
+
+    @media only screen and (max-width: 520px) {
+      font-size: 0.875rem;
+
+      figure {
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+      }
+
+      .highlight pre {
+        font-size: 0.5rem;
+      }
+    }
 
     .scroll-progress-container {
       overflow: hidden;
@@ -58,7 +60,7 @@ html {
       width: 100%;
       height: 0.8rem;
       z-index: 10000;
-    
+
       .scroll-progress-bar {
         width: 0%;
         height: 0.8rem;
@@ -82,7 +84,11 @@ html {
       }
 
       /* HEADLINES */
-      h2, h3, h4, h5, h6 {
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         margin-top: 3rem;
       }
 
@@ -94,12 +100,14 @@ html {
       *:target {
         color: $color-secondry;
       }
-      
+
       a:-webkit-any-link {
         color: $color-secondry;
+
         &:hover {
           color: $color-secondayLight;
         }
+
         &:active {
           color: $color-secondayDark;
         }
@@ -121,11 +129,13 @@ html {
         border-collapse: collapse;
         padding: 0.4rem;
       }
+
       table {
         width: 100%;
         @include table-border();
-        
-        th, td {
+
+        th,
+        td {
           @include table-border();
         }
       }
@@ -135,7 +145,7 @@ html {
         font-style: italic;
         border: thin solid var(--color-border);
         padding: 1rem;
-      
+
         p {
           margin: 0;
         }
@@ -154,10 +164,11 @@ html {
           padding-inline-start: 10px;
         }
       }
+
       li {
         margin: 0.4rem 0;
       }
-      
+
       /* HORIZONTAL-LINES */
       hr {
         margin: 2rem 0;
@@ -167,6 +178,7 @@ html {
         &:before {
           content: '/////'
         }
+
         &:after {
           content: attr(data-content) '/////'
         }
