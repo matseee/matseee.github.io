@@ -108,7 +108,7 @@ ENDIF.
 
 | indicator (`mvt_ind`) | description |
 |---|---|
-| ` ` | Goods movement w/o reference |
+|  | Goods movement w/o reference |
 | `B` 	|  Goods movement for purchase order |
 | `F` 	| Goods movement for production order | 
 | `L` | Goods movement for delivery note |
