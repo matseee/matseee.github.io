@@ -31,5 +31,10 @@
 })();
 
 function onNavigateBack() {
-  history.go(-1);
+  window.history.go(-1);
+
+  // fallback if no history is available
+  setTimeout(function () {
+    window.location.href = window.location.origin;
+  }, 500);
 }
