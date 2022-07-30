@@ -100,7 +100,8 @@ html {
       *:target {
         color: $color-secondry;
       }
-
+      
+      a:link,
       a:-webkit-any-link {
         color: $color-secondry;
 
