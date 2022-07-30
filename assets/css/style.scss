@@ -1,6 +1,6 @@
 --- 
 --- 
-@import "github-syntax-dark.css";
+@import "monkai.css";
 @import "./colors";
 
 :root {
@@ -100,22 +100,25 @@ html {
       *:target {
         color: $color-secondry;
       }
-      
+
       a {
         &:link {
           color: $color-secondry;
         }
-        &:visited { 
+
+        &:visited {
           color: $color-secondayDark;
         }
-        &:hover { 
+
+        &:hover {
           color: $color-secondayLight;
         }
+
         &:active {
           color: $color-secondayDark;
         }
       }
-      
+
       a:-webkit-any-link {
         color: $color-secondry;
 
