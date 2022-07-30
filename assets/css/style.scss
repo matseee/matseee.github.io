@@ -101,7 +101,21 @@ html {
         color: $color-secondry;
       }
       
-      a:link,
+      a {
+        &:link {
+          color: $color-secondry;
+        }
+        &:visited { 
+          color: $color-secondayDark;
+        }
+        &:hover { 
+          color: $color-secondayLight;
+        }
+        &:active {
+          color: $color-secondayDark;
+        }
+      }
+      
       a:-webkit-any-link {
         color: $color-secondry;
 
