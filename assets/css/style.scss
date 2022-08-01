@@ -131,7 +131,40 @@ html {
         }
       }
 
+      /* BUTTONS */
+      button {
+        height: 2.5rem;
+        min-width: 4rem;
+
+        color: $color-white;
+        font-size: 1rem;
+
+        background-color: $color-primaryLight;
+        border: 2px $color-primaryLight solid;
+        border-radius: 0.3rem;
+
+        &:hover {
+          background-color: $color-primary;
+          border: 2px $color-primary solid;
+          cursor: pointer;
+        }
+      }
+
       /* CODE-SNIPPETS */
+      .highlight {
+        .copy-markdown-container {
+          display: flex;
+          flex-direction: row-reverse;
+          width: 100%;
+
+          .copy-markdown-button {
+            position: absolute;
+            margin-right: 1rem;
+            margin-top: 1rem;
+          }
+        }
+      }
+
       div.highlighter-rouge code {
         display: block;
         overflow-x: auto;
