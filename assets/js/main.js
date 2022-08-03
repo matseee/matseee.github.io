@@ -1,6 +1,7 @@
 (function () {
-
-  // ScrollProgress bar
+  /* *********************************************************************************************
+   * ScrollProgress bar
+   */
   const scrollProgress = document.getElementById('scroll-progress-bar');
 
   window.addEventListener('scroll', () => {
@@ -10,7 +11,9 @@
     scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
   });
 
-  // Toggle dark-light mode
+  /* *********************************************************************************************
+   * Toggle dark-light mode
+   */
   const darkLightToggleImage = document.getElementById('darkLightToggle');
 
   if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -28,8 +31,40 @@
     }
   });
 
+  /* *********************************************************************************************
+   * Copy code function
+   */
+  const codeBlocks = document.querySelectorAll('pre.highlight');
+
+  codeBlocks.forEach((codeblock) => {
+    const code = codeblock.children[0];
+
+    const copyButton = document.createElement('button');
+    copyButton.textContent = 'Copy';
+    copyButton.className = 'copy-markdown-button';
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'copy-markdown-container';
+    buttonContainer.appendChild(copyButton);
+
+    copyButton.addEventListener('click', () => {
+      copyButton.textContent = 'Copied';
+
+      window.navigator.clipboard.writeText(code.innerText);
+
+      setTimeout(() => {
+        copyButton.textContent = 'Copy';
+      }, 2000);
+    });
+
+    codeblock.insertBefore(buttonContainer, code);
+  });
+
 })();
 
+/* *********************************************************************************************
+ * Navigation function
+ */
 function onNavigateBack() {
   window.history.go(-1);
 
