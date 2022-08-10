@@ -7,7 +7,7 @@ categories: ["Programming"]
 To run the written Angular unit tests using Karma, a Chrome/Chromium browser is required. Karma is actually not a test framework, but only executes the tests (for example Jasmine tests). However, Karma is started via the normal test command of the Angular CLI and this is a problem in an automated CI pipeline using Docker containers, since no GUI application can be started inside a Docker container. At least not without tricks. However, there is the alternative to start the Chromium browser without GUI. The following explains how to configure the Angular project and the docker image so that karma can be run inside a docker container.
 
 ### 1. Configure package.json
-```json
+```js
   "scripts": {
     "ng": "ng",
     // ...
