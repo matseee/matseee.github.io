@@ -1,5 +1,5 @@
 ---
----
+--- 
 @import "monkai.css";
 @import "./colors";
 
@@ -163,6 +163,12 @@ html {
             margin-top: .2rem;
           }
         }
+      }
+
+      code {
+        background-color: rgba(110, 118, 129, 0.4);
+        border-radius: 6px;
+        padding: 0.1em 0.2em;
       }
 
       div.highlighter-rouge code {

@@ -21,7 +21,7 @@ If a commit was created by mistake and you want to revert it, you are faced with
     ```
 
 ## git reset
-Can be used when the state of a past commit needs to be restored. All subsequent changes are removed with this command. First you need to get the commit hash value of the last "right" commit. With the command `git log` the required commit hash value can be determined:
+Can be used when the state of a past commit needs to be restored. All subsequent changes are removed with this command. First you need to get the commit hash value of the last `right` commit. With the command `git log` the required commit hash value can be determined:
 ```bash
 git log --oneline --decorate --graph
 ...
