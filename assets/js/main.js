@@ -40,7 +40,7 @@
     const code = codeblock.children[0];
 
     const copyButton = document.createElement('button');
-    copyButton.textContent = 'Copy';
+    copyButton.innerHTML = `<img src="/assets/copy.svg" class="copy"/>`;
     copyButton.className = 'copy-markdown-button';
 
     const buttonContainer = document.createElement('div');
@@ -48,12 +48,12 @@
     buttonContainer.appendChild(copyButton);
 
     copyButton.addEventListener('click', () => {
-      copyButton.textContent = 'Copied';
+      copyButton.innerHTML = `<img src="/assets/copy-check.svg" class="copy-check"/>`;
 
       window.navigator.clipboard.writeText(code.innerText);
 
       setTimeout(() => {
-        copyButton.textContent = 'Copy';
+        copyButton.innerHTML = `<img src="/assets/copy.svg" class="copy"/>`;
       }, 2000);
     });
 
