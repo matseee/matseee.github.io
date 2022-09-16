@@ -41,19 +41,21 @@
 
     const copyButton = document.createElement('button');
     copyButton.innerHTML = `<img src="/assets/copy.svg" class="copy"/>`;
-    copyButton.className = 'copy-markdown-button';
+    copyButton.className = 'copy-code-button';
 
     const buttonContainer = document.createElement('div');
-    buttonContainer.className = 'copy-markdown-container';
+    buttonContainer.className = 'copy-code-container';
     buttonContainer.appendChild(copyButton);
 
     copyButton.addEventListener('click', () => {
       copyButton.innerHTML = `<img src="/assets/copy-check.svg" class="copy-check"/>`;
+      copyButton.className = 'copy-code-button copy-code-button-clicked';
 
       window.navigator.clipboard.writeText(code.innerText);
 
       setTimeout(() => {
         copyButton.innerHTML = `<img src="/assets/copy.svg" class="copy"/>`;
+        copyButton.className = 'copy-code-button';
       }, 2000);
     });
 

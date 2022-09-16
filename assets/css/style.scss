@@ -152,16 +152,21 @@ html {
 
       /* CODE-SNIPPETS */
       .highlight {
-        .copy-markdown-container {
+        .copy-code-container {
           display: flex;
           flex-direction: row-reverse;
           width: 100%;
 
-          .copy-markdown-button {
+          .copy-code-button {
             display: none;
             position: absolute;
             margin-right: .2rem;
             margin-top: .2rem;
+
+            &-clicked {
+              display: block;
+            }
+
             .copy {
               height: 1.2rem;
             }
@@ -179,7 +184,7 @@ html {
       }
 
       .highlight:hover {
-        .copy-markdown-button {
+        .copy-code-button {
           display: block;
         }
       }
