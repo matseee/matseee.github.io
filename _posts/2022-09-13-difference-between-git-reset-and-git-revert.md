@@ -55,3 +55,10 @@ We assume that the changes of the commit `e2527a6` should be reverted. We can do
 git revert e2527a6
 ```
 With the `--no-edit` option a default commit message is chosen, otherwise the editor is opened and the user is prompted to enter a commit message. The created commit can then be pushed to the remote repository as usual.
+
+## PS: how to delete a file from the complete history
+```
+git filter-branch --index-filter \
+    'git rm -rf --cached --ignore-unmatch path/to/file' HEAD
+git push origin +main
+```
