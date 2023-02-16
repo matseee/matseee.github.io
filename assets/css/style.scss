@@ -21,10 +21,6 @@
   --color-border: #{$color-primary};
 }
 
-* {
-  transition: all .2s ease;
-}
-
 html {
   height: 100%;
   background: var(--color-page-background);
